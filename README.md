@@ -2,7 +2,7 @@
 🚀 Extensão para agilizar a obtenção de Access Token através do navegador Chrome.
 
 ### Instalação
- [![](https://github.com/elvisveiga/TokenAPIGenerator/blob/master/images/icon_48.png?raw=true) Chrome Web Store](shorturl.at/cdAK8)
+ [![](https://github.com/elvisveiga/TokenAPIGenerator/blob/master/images/icon_48.png?raw=true)Chrome Web Store](https://shorturl.at/cdAK8)
 
 #### Formulário (Popup)
 Este formulário é apresentado quando o usuário clicar no ícone da extensão no navegador.
