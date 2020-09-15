@@ -27,7 +27,11 @@ Tabela de conteúdos
    * [Features](#features)
    * [Tecnologias](#tecnologias)
    * [Tabela de Conteúdo](#tabela-de-conteudo)
+   * [Autor](#autor)
 <!--te-->
+
+![](https://img.shields.io/github/stars/elvisveiga/TokenAPIGenerator.svg) ![](https://img.shields.io/github/forks/elvisveiga/TokenAPIGenerator.svg) ![](https://img.shields.io/github/tag/elvisveiga/TokenAPIGenerator.svg) ![](https://img.shields.io/github/release/elvisveiga/TokenAPIGenerator.svg) ![](https://img.shields.io/github/issues/elvisveiga/TokenAPIGenerator.svg)
+
 
 ### Autor
 ---
@@ -38,5 +42,3 @@ Tabela de conteúdos
 
 [![Linkedin Badge](https://img.shields.io/badge/-Elvis_Veiga-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/elvisveiga/)](https://www.linkedin.com/in/elvisveiga/) 
 [![Gmail Badge](https://img.shields.io/badge/-elviswveiga@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:elviswveiga@gmail.com)](mailto:elviswveiga@gmail.com)
-
-![](https://img.shields.io/github/stars/elvisveiga/TokenAPIGenerator.svg) ![](https://img.shields.io/github/forks/elvisveiga/TokenAPIGenerator.svg) ![](https://img.shields.io/github/tag/elvisveiga/TokenAPIGenerator.svg) ![](https://img.shields.io/github/release/elvisveiga/TokenAPIGenerator.svg) ![](https://img.shields.io/github/issues/elvisveiga/TokenAPIGenerator.svg)
