@@ -34,7 +34,7 @@
             aria-describedby="userHelp"
           />
           <small id="userHelp" class="form-text text-muted">
-            Usuário para autenticação
+            Authentication user
           </small>
         </div>
         <div class="form-group">
@@ -47,7 +47,7 @@
             aria-describedby="passHelp"
           />
           <small id="passHelp" class="form-text text-muted">
-            Senha para autenticação
+            Authentication password
           </small>
         </div>
         <div class="form-group">
@@ -61,7 +61,7 @@
             aria-describedby="clientIdHelp"
           />
           <small id="clientIdHelp" class="form-text text-muted">
-            Token de autenticação
+            Authentication token
           </small>
         </div>
         <div class="form-group">
@@ -70,7 +70,7 @@
             class="badge badge-success"
             id="token-copiado"
             style="font-size: 14px; font-family: Arial, Helvetica, sans-serif"
-            >Token Copiado!</span
+            >Token Copied!</span
           >
           <textarea
             type="text"
@@ -81,11 +81,10 @@
           <small id="tokenHelp" class="form-text text-muted"> Token </small>
         </div>
         <button type="button" id="button-generate" class="btn btn-success">
-          Gerar Token
+          <span class="spinner-border spinner-border-sm" role="status" hidden aria-hidden="true"></span>
+          Generate Token
         </button>
-        <span class="alert alert-danger" id="alert-error" role="alert">
-          Falha ao gerar token!
-        </span>
+        <span id="error-area"></span>
       </form>
     </div>
     <script src="popup.js"></script>

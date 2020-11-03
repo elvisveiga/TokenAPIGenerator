@@ -7,9 +7,37 @@ chrome.storage.sync.get(null, function ({ url, username, password, clientId }) {
   $("#clientId").val(clientId);
 });
 
-async function getToken(url, username, password, clientId) {
-  var result;
-  try {
+function setGenerateButtonDisabled(isDisabled) {
+  $("#button-generate").prop("disabled", isDisabled);
+}
+
+function setGenerateButtonLoading(isLoading) {
+  $("#button-generate span").prop("hidden", !isLoading);
+  setGenerateButtonDisabled(isLoading);
+}
+
+function clearErrors() {
+  $("#error-area").empty();
+}
+
+function showError(error) {
+  clearErrors();
+  $("#error-area")
+    .append(`<span style="padding: 8px;position:absolute" class="alert alert-danger" id="alert-error" role="alert">
+  ${error}
+</span>`);
+}
+
+function handleGenerate(e) {
+  clearErrors();
+  setGenerateButtonLoading(true);
+  $("#token-copiado").hide();
+  var url = $("#url").val();
+  var username = $("#username").val();
+  var password = $("#password").val();
+  var clientId = $("#clientId").val();
+
+  chrome.storage.sync.set({ url, username, password, clientId }, function () {
     result = $.ajax({
       url: url,
       contentType: "application/json",
@@ -19,29 +47,23 @@ async function getToken(url, username, password, clientId) {
         password: password,
         client_id: clientId,
       },
-    });
-  } catch (error) {
-    result.success = false;
-  }
-
-  return result;
-}
-
-function handleGenerate(e) {
-  $("#alert-error").hide();
-  $("#token-copiado").hide();
-  var url = $("#url").val();
-  var username = $("#username").val();
-  var password = $("#password").val();
-  var clientId = $("#clientId").val();
-
-  chrome.storage.sync.set({ url, username, password, clientId }, function () {
-    getToken(url, username, password, clientId).then(function (result) {
-      if (result.success) {
-        $("#token").val(result.data.token.accessToken);
-      } else {
-        $("#alert-error").show();
-      }
+      error: function (result, textStatus) {
+        let textMessage =
+          textStatus == "timeout"
+            ? "Timeout of 10 seconds exceeded"
+            : "Failed to generate token. Please check your connection.";
+        showError(textMessage);
+        setGenerateButtonLoading(false);
+      },
+      success: function (result, textStatus) {
+        if (result.success) {
+          $("#token").val(result.data.token.accessToken);
+        } else {
+          showError("Failed to generate token. Please check the parameters.");
+        }
+        setGenerateButtonLoading(false);
+      },
+      timeout: 10000,
     });
   });
 }
