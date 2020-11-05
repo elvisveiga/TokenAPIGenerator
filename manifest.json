@@ -7,7 +7,6 @@
       "persistent": false
     },
     "permissions": [
-      "activeTab",
       "storage"
     ],
     "browser_action": {
